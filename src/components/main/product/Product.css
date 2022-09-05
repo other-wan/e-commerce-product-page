@@ -1,0 +1,48 @@
+
+.product {
+    padding: 20px;
+}
+
+.product-desc h1 {
+    margin-block: 0 10px;
+}
+
+.product-desc p {
+    margin-block: 16px;
+}
+
+
+.product-price {
+    gap: 20px;
+    margin-block: 0 20px;
+}
+
+.product-price p{
+    flex: 1;
+    text-align: end;
+    text-decoration: line-through;
+}
+
+.product-price h6 {
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.product-count {
+    gap: 40px;
+    margin-block: 0 20px;
+    border-radius: 8px;
+}
+
+.product-count img,
+.product-count h3 {
+    padding: 14px 16px;
+}
+
+.btn-container button {
+    gap: 16px;
+}
+
+.btn-container img {
+    height: 16px;
+}
