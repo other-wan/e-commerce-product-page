@@ -1,0 +1,27 @@
+<Splide
+        ref={thumbsRef}
+        options={{
+          type: "slide",
+          pagination: false,
+          height: "10rem",
+          //   width: "10rem",
+          arrows: false,
+          rewind: true,
+          gap: "1rem",
+          fixedWidth: 110,
+          fixedHeight: 70,
+          cover: true,
+          focus: "center",
+          isNavigation: true,
+        }}
+      >
+        {state.product.images.map((src) => (
+          <SplideSlide key={src}>
+            <img
+              className="w-full h-full object-cover object-top"
+              src={src}
+              alt="Sneakers"
+            />
+          </SplideSlide>
+        ))}
+      </Splide>

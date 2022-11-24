@@ -1,0 +1,25 @@
+@media screen and (min-width: 1024px) {
+  .splide__slide {
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  .splide__track--nav > .splide__list > .splide__slide {
+    border: none;
+    overflow: hidden;
+    border-radius: 0.375rem;
+  }
+
+  .splide__track--nav > .splide__list > .splide__slide.is-active {
+    border: 2px solid hsl(26 100% 55%);
+    opacity: 0.8;
+  }
+
+  .splide__track--nav
+    > .splide__list
+    > .splide__slide:hover:not(.splide__track--nav
+      > .splide__list
+      > .splide__slide.is-active) {
+    opacity: 0.8;
+  }
+}
