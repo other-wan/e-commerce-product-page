@@ -41,7 +41,10 @@ const Description: FunctionComponent<IDescription> = ({ setCartCount }) => {
       </article>
       <div className="flex items-center justify-between gap-4 mb-7 lg:flex-wrap">
         <p className="text-2xl font-bold">$125.00</p>
-        <p className="box-border w-min h-min mr-auto py-1 px-2 bg-pale-orange text-orange text-xs rounded-md font-semibold tracking-widest">
+        <p
+          className="box-border w-min h-min mr-auto py-1 px-2 bg-pale-orange 
+        text-orange text-xs rounded-md font-semibold tracking-widest"
+        >
           50%
         </p>
         <p className="font-semibold text-grayish-blue line-through lg:basis-full">
@@ -53,7 +56,10 @@ const Description: FunctionComponent<IDescription> = ({ setCartCount }) => {
         onSubmit={handleSubmit}
         className="lg:flex lg:items-center lg:gap-5"
       >
-        <div className="flex items-center justify-between bg-light-grayish-blue mb-5 rounded-lg box-border p-4 lg:w-[20rem] lg:m-0">
+        <div
+          className="flex items-center justify-between bg-light-grayish-blue mb-5
+          rounded-lg box-border p-4 lg:w-[20rem] lg:m-0"
+        >
           <button
             type="button"
             className="hover:opacity-60"
@@ -72,7 +78,10 @@ const Description: FunctionComponent<IDescription> = ({ setCartCount }) => {
           </button>
         </div>
 
-        <button className="flex items-center justify-center gap-4 w-full bg-orange hover:opacity-60 px-6 py-4 rounded-lg text-white font-semibold">
+        <button
+          className="flex items-center justify-center gap-4 w-full bg-orange 
+          hover:opacity-60 px-6 py-4 rounded-lg text-white font-semibold"
+        >
           <Cart color="#FFFFFF" />
           Add to cart
         </button>

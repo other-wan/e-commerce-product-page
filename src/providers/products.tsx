@@ -17,7 +17,7 @@ interface IProductProvider {
 }
 
 interface IProductAction {
-  type: "increment" | "decrement";
+  type: "increment" | "decrement" | "delete";
   payload: number;
 }
 
@@ -33,6 +33,9 @@ const productReducer = (state: IProductState, action: IProductAction) => {
 
     case "decrement":
       return { ...state, count: state.count - action.payload };
+
+    case "delete":
+      return { ...state, count: action.payload };
 
     default:
       return state;

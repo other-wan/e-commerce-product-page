@@ -13,11 +13,18 @@ import {
 } from "react";
 import { useMediaQuery } from "usehooks-ts";
 
+import Close from "components/icons/Close";
+import classNames from "classnames";
+
 interface IGallery {
   setShowGallery: Dispatch<SetStateAction<boolean>>;
+  showGallery?: boolean;
 }
 
-const Gallery: FunctionComponent<IGallery> = ({ setShowGallery }) => {
+const Gallery: FunctionComponent<IGallery> = ({
+  setShowGallery,
+  showGallery,
+}) => {
   const { state } = useContext(ProductContext);
 
   const mainRef = useRef<Splide>(null);
@@ -32,17 +39,31 @@ const Gallery: FunctionComponent<IGallery> = ({ setShowGallery }) => {
   const isLaptop = useMediaQuery("(min-width:1024px)");
 
   return (
-    <section className="lg:flex-initial lg:w-[40%]">
+    <section
+      className={classNames("lg:flex-initial", {
+        ["lg:w-[30vw]"]: showGallery,
+        ["lg:w-[35%]"]: !showGallery,
+      })}
+    >
+      {showGallery && (
+        <button
+          className="block ml-auto mb-2"
+          onClick={() => setShowGallery(false)}
+        >
+          <Close color="#FFFFFF" />
+        </button>
+      )}
       <Splide
         onClick={() => setShowGallery(true)}
-        className="-pointer"
+        className="cursor-pointer"
         ref={mainRef}
         options={{
           arrows: !isLaptop,
           type: "slide",
           perPage: 1,
           pagination: false,
-          fixedHeight: "50vh",
+          fixedWidth: "100%",
+          fixedHeight: showGallery ? "auto" : "50vh",
           classes: {
             arrow: "splide__arrow bg-white",
           },
@@ -70,7 +91,7 @@ const Gallery: FunctionComponent<IGallery> = ({ setShowGallery }) => {
           rewind: true,
           gap: 10,
           perPage: 4,
-          fixedHeight: 70,
+          fixedHeight: 60,
           // cover: true,
           isNavigation: true,
           classes: {},
